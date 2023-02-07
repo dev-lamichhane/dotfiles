@@ -1,0 +1,29 @@
+! softlink ~/.Xmodmap to this file to turn CAPSLOCK to contorl and Shift+CAPSLOCK to CAPSLOCK
+!
+clear lock
+clear control
+clear mod4
+keycode 66 = Control_L Caps_Lock NoSymbol NoSymbol
+keycode 23 = Super_L Super_R
+add mod4 = Super_L Super_R
+add control = Control_L Control_R     
+
+keycode  24 = q Q exclam
+keycode  25 = w W at
+keycode  26 = e E numbersign
+keycode  27 = r R dollar
+keycode  28 = t T percent
+keycode  29 = y Y asciicircum
+keycode  30 = u U ampersand
+keycode  31 = i I asterisk
+keycode  32 = o O parenleft
+keycode  33 = p P parenright
+
+keycode 49 = Tab
+keycode 133 = grave asciitilde
+
+keycode 64 = Mode_switch
+keysym h = h H Left
+keysym j = j J Down
+keysym k = k K Up
+keysym l = l L Right
