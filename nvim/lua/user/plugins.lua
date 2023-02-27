@@ -57,14 +57,14 @@ return packer.startup(function(use)
 
   -- treesitter & colored brackets
   use {
-      'nvim-treesitter/nvim-treesitter', 
-      run = ':TSUpdate'
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
   }
   use "p00f/nvim-ts-rainbow" -- multicolored parenthesis
   use "windwp/nvim-ts-autotag" -- autotag
 
   -- autopair
-  use "windwp/nvim-autopairs" 
+  use "windwp/nvim-autopairs"
 
   -- commentary
   use "numToStr/comment.nvim"
@@ -74,10 +74,16 @@ return packer.startup(function(use)
   use "bluz71/vim-nightfly-guicolors"
 
   -- Lualine
-  use "nvim-lualine/lualine.nvim"
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
 
   -- Vim surround
   use "tpope/vim-surround"
+
+  -- Git
+  use "lewis6991/gitsigns.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

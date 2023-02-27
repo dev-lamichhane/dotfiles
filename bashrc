@@ -52,7 +52,7 @@ PS1='\W$ '
 #. /usr/lib/python3.9/site-packages/powerline/bindings/bash/powerline.sh
 
 # Temp Aliases
-alias addict='cd ~/addict/react-advanced-2020/'
+alias addict='cd ~/addict/react-projects/'
 
 # React Native Commands
 alias rnstart='npx react-native start'
@@ -65,7 +65,7 @@ alias intel='/opt/intellij/bin/idea.sh "$1" > /dev/null 2>&1 &'
 alias showdns='cat /etc/resolv.conf'
 alias react='cd ~/Dump/react-typescript-projects-2021'
 alias react1='cd ~/Documents/react-projects-setups'
-alias pacmansyu='sudo pacman -Syu --noconfirm && updatepkglist && reboot'
+alias pacmansyu='sudo pacman -Syu --noconfirm && updatepkglist && paccache -rk1 && reboot'
 alias rmd='rm -rf'
 alias updatepkglist='pacman -Qqetn > ~/.config/dotfiles/pkglist.txt'
 alias ping='ping -c 5 1.1.1.1 && ping -c 5 8.8.8.8'
