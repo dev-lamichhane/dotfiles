@@ -10,6 +10,9 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
+-- load snippets from path/of/your/nvim/config/my-cool-snippets
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/dotfiles/snippets" } })
+
 local check_backspace = function()
   local col = vim.fn.col "." - 1
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
@@ -18,7 +21,7 @@ end
 --   פּ ﯟ   some other good icons
 local kind_icons = {
   Text = "",
-  Method = "m",
+  Method = "m", 
   Function = "",
   Constructor = "",
   Field = "",
@@ -55,7 +58,7 @@ cmp.setup {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-    ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+    ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }), 
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ["<C-e>"] = cmp.mapping {
@@ -64,7 +67,7 @@ cmp.setup {
     },
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
-    -- ["<CR>"] = cmp.mapping.confirm { select = true },
+   ["<CR>"] = cmp.mapping.confirm { select = true },
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
