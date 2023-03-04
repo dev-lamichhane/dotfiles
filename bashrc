@@ -22,6 +22,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Source a secret bashrc file if present
+[[ -f ~/.info ]] && source ~/.info
+
 #export
 export EDITOR='/usr/bin/nvim'
 export VISUAL='/usr/bin/nvim'
@@ -53,11 +56,17 @@ PS1='\W$ '
 
 # Temp Aliases
 alias addict='cd ~/addict/react-projects/'
+alias learn='cd ~/Downloads/react-advanced-2020/src/tutorial'
+alias npmstart='npm react-scripts --openssl-legacy-provider start'
 
 # React Native Commands
 alias rnstart='npx react-native start'
 alias rnandroid='npx react-native run-android'
 alias link='npx react-native link'
+
+# Mess with people
+alias dir='vim'
+alias cls='cmatrix'
 
 # Intellij
 alias intel='/opt/intellij/bin/idea.sh "$1" > /dev/null 2>&1 &'
@@ -132,6 +141,10 @@ alias tube='ytfzf -tf'
 alias tsn='ts-node'
 alias alpha='printf "A|B|C|D|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|Y\nY|R|S|T|V|K|P|U|B|N|C|Q|G|I|D|F|L|M|H|A|J|O\n"'
 #Functions that can be called from the terminal
+
+fuck(){
+  echo "fuck you"
+}
 
 # Calulate shit
 calc(){
@@ -247,3 +260,4 @@ sha $1 $2
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
+
