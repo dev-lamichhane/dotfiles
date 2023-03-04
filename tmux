@@ -17,6 +17,8 @@
 #            |_|   |_|  |_|  \___/  /_/\_\ |_| \_\  \____|
 
 
+# need bin/battery_status for statusline to display proper stats
+
 # Send prefix
 set-option -g prefix C-n
 unbind-key C-n
@@ -58,7 +60,8 @@ set-option -g status-left-length 20
 
     
 # Right
-set-option -g status-right "#(date +'%a %b %d %I:%M%p ') #(nmcli | head -1| awk '{print ($2==\"disconnected\") ? \"no wifi\" : $4}')#[bg="#292c3b",fg="#82aaff"] #[fg=color235,bg="#82aaff"]#(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk ' /state/ { PERCENTAGE=($2==\"discharging\")? \"-\" : \"+\" } /percentage/ { print PERCENTAGE $2 }') "
+#set-option -g status-right "#(date +'%a %b %d %I:%M%p ') #(nmcli | head -1| awk '{print ($2==\"disconnected\") ? \"no wifi\" : $4}')#[bg="#292c3b",fg="#82aaff"] #[fg=color235,bg="#82aaff"]#(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk ' /state/ { PERCENTAGE=($2==\"discharging\")? \"-\" : \"+\" } /percentage/ { print PERCENTAGE $2 }')" "#(fuck)"
+set-option -g status-right "#(date +'%a %b %d %I:%M%p ') #(nmcli | head -1| awk '{print ($2==\"disconnected\") ? \"no wifi\" : $4}')#[bg="#292c3b",fg="#82aaff"] #[fg=color235,bg="#82aaff"]#(battery_status)"
 set-option -g status-right-length 54
 
 # Window/Middle
