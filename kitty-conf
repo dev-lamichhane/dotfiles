@@ -30,7 +30,8 @@
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-font_family      Source Code Pro
+#font_family      Source Code Pro
+font_family       Firacode Nerd Font
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
@@ -47,7 +48,7 @@ bold_italic_font auto
 #:     italic_font      Operator Mono Book Italic
 #:     bold_italic_font Operator Mono Medium Italic
 
-font_size 11.0
+font_size 13.0
 
 #: Font size (in pts)
 
@@ -276,7 +277,7 @@ open_url_modifiers kitty_mod
 #: The modifier keys to press when clicking with the mouse on URLs to
 #: open the URL
 
-open_url_with default
+open_url_with default 
 
 #: The program with which to open URLs that are clicked on. The
 #: special value default means to use the operating system's default
@@ -287,7 +288,7 @@ url_prefixes http https file ftp
 #: The set of URL prefixes to look for when detecting a URL under the
 #: mouse cursor.
 
-copy_on_select no
+copy_on_select yes
 
 #: Copy to clipboard or a private buffer on select. With this set to
 #: clipboard, simply selecting text with the mouse will cause the text
@@ -303,7 +304,7 @@ copy_on_select no
 #: programs, including websites open in your browser can read the
 #: contents of the system clipboard.
 
-strip_trailing_spaces never
+strip_trailing_spaces always
 
 #: Remove spaces at the end of lines when copying to clipboard. A
 #: value of smart will do it when using normal selections, but not
@@ -636,7 +637,7 @@ background #011627
 
 #: The foreground and background colors
 
-background_opacity 1.0
+background_opacity 1.0 
 
 #: The opacity of the background. A number between 0 and 1, where 1 is
 #: opaque and 0 is fully transparent.  This will only work if
