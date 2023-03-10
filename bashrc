@@ -1,13 +1,3 @@
-#           ____       _     __     __  _____   _   ____   
-#          |  _ \     / \    \ \   / / | ____| ( ) / ___|  
-#          | | | |   / _ \    \ \ / /  |  _|   |/  \___ \  
-#          | |_| |  / ___ \    \ V /   | |___       ___) | 
-#          |____/  /_/   \_\    \_/    |_____|     |____/  
-#           ____       _      ____       _      ____    ____   
-#          | __ )     / \    |  _ \     / \    / ___|  / ___|  
-#          |  _ \    / _ \   | | | |   / _ \   \___ \  \___ \  
-#          | |_) |  / ___ \  | |_| |  / ___ \   ___) |  ___) | 
-#          |____/  /_/   \_\ |____/  /_/   \_\ |____/  |____/  
 #           ____       _      ____    _   _   ____     ____  
 #          | __ )     / \    / ___|  | | | | |  _ \   / ___| 
 #          |  _ \    / _ \   \___ \  | |_| | | |_) | | |     
@@ -55,9 +45,45 @@ PS1='\W$ '
 #. /usr/lib/python3.9/site-packages/powerline/bindings/bash/powerline.sh
 
 # Temp Aliases
+#########################################################################################################################
+#########################################################################################################################
+
 alias addict='cd ~/addict/react-projects/'
 alias learn='cd ~/Downloads/react-advanced-2020/src/tutorial'
+alias projects='cd ~/Dump/react-projects'
 alias npmstart='npm react-scripts --openssl-legacy-provider start'
+
+learnvid(){
+  if [[ $# -eq 0 ]]; then
+  total=$(awk '{print $1 * 3600 + $2 * 60 + $3}' ~/Downloads/react-advanced-2020/tutorial/time.txt)
+else
+  total=$(( $1 * 3600 + $2 * 60 + $3 ))
+  fi
+
+  mpv https://youtu.be/iZhV0bILFb0?t=$total
+}
+
+learntime(){
+  echo "$1 $2 $3" > ~/Downloads/react-advanced-2020/tutorial/time.txt
+}
+
+projectsvid(){
+  if [[ $# -eq 0 ]]; then
+  total=$(awk '{print $1 * 3600 + $2 * 60 + $3}' ~/Dump/react-projects/time.txt)
+else
+  total=$(( $1 * 3600 + $2 * 60 + $3 ))
+  fi
+
+  mpv https://youtu.be/ly3m6mv5qvg?t=$total
+}
+
+
+projectstime(){
+  echo "$1 $2 $3" > ~/Dump/react-projects/time.txt
+}
+
+#########################################################################################################################
+#########################################################################################################################
 
 # React Native Commands
 alias rnstart='npx react-native start'
@@ -140,11 +166,14 @@ alias unneeded='sudo pacman -Rns `pacman -Qdtq`'
 alias tube='ytfzf -tf'
 alias tsn='ts-node'
 alias alpha='printf "A|B|C|D|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|Y\nY|R|S|T|V|K|P|U|B|N|C|Q|G|I|D|F|L|M|H|A|J|O\n"'
+
+
 #Functions that can be called from the terminal
 
-fuck(){
-  echo "fuck you"
+eyeball(){
+  ncdu $1 --exclude node_modules --exclude-caches --exclude-kernfs --no-follow-symlinks
 }
+
 
 # Calulate shit
 calc(){

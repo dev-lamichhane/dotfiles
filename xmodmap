@@ -22,7 +22,7 @@ keycode  33 = p P parenright
 keycode 49 = Tab
 keycode 133 = grave asciitilde
 
-keycode 64 = Mode_switch
+!keycode 64 = Mode_switch
 keysym h = h H Left
 keysym j = j J Down
 keysym k = k K Up

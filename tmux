@@ -1,15 +1,3 @@
-#           ____       _     __     __  _____ _   ____  
-#          |  _ \     / \    \ \   / / | ____( ) / ___| 
-#          | | | |   / _ \    \ \ / /  |  _| |/  \___ \ 
-#          | |_| |  / ___ \    \ V /   | |___     ___) |
-#          |____/  /_/   \_\    \_/    |_____|   |____/#           
-#                                                      
-#           ____    ___   ____    _____  __   __
-#          |  _ \  |_ _| |  _ \  |_   _| \ \ / /
-#          | | | |  | |  | |_) |   | |    \ V / 
-#          | |_| |  | |  |  _ <    | |     | |  
-#          |____/  |___| |_| \_\   |_|     |_|            
-#                                              
 #           _____   __  __   _   _  __  __  ____     ____ 
 #          |_   _| |  \/  | | | | | \ \/ / |  _ \   / ___|
 #            | |   | |\/| | | | | |  \  /  | |_) | | |    
@@ -25,14 +13,16 @@ unbind-key C-n
 bind-key C-n send-prefix
 
 # Use Alt-arrow keys to switch panes
-bind -n M-Left select-pane -L
-bind -n M-Right select-pane -R
-bind -n M-Up select-pane -U
-bind -n M-Down select-pane -D
+bind -n M-H select-pane -L
+bind -n M-L select-pane -R
+bind -n M-K select-pane -U
+bind -n M-J select-pane -D
 
 # Shift arrow to switch windows
-bind -n S-Left previous-window
-bind -n S-Right next-window
+#bind -n S-Left previous-window
+#bind -n S-Right next-window
+bind -n M-h previous-window
+bind -n M-l next-window
 
 # Mouse mode
 setw -g mouse on

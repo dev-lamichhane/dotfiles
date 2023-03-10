@@ -14,8 +14,8 @@ map('n', '<C-k>','<C-w>k')
 map('n', '<C-l>','<C-w>l')
 
 -- Make adjusting split sizes easy
-map('n','<C-Left>',':vertical resize -3<CR>')
-map('n','<C-Right>',':vertical resize +3<CR>')
+map('n','<C-Left>',':vertical resize +3<CR>')
+map('n','<C-Right>',':vertical resize -3<CR>')
 map('n','<C-Up>',':resize +3<CR>')
 map('n','<C-Down>',':resize -3<CR>')
 
