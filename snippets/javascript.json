@@ -25,5 +25,11 @@
       "}"
     ],
     "discreption":"custom for"
+  },
+  "react fragment": {
+    "prefix": "frag",
+    "body": [
+      "return <>$1</>"
+    ]
   }
 }
