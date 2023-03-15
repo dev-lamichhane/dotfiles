@@ -114,11 +114,6 @@ _G.packer_plugins = {
     path = "/home/dave/.local/share/nvim/site/pack/packer/start/comment.nvim",
     url = "https://github.com/numToStr/comment.nvim"
   },
-  ["friendly-snippets"] = {
-    loaded = true,
-    path = "/home/dave/.local/share/nvim/site/pack/packer/start/friendly-snippets",
-    url = "https://github.com/rafamadriz/friendly-snippets"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/dave/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",

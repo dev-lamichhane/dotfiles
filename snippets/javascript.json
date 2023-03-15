@@ -1,35 +1,62 @@
 {
-  "arrow function": {
-    "prefix": "fn",
+  "console.log": {
+    "prefix": "cl",
     "body": [
-      "const $1 = ($2) =>{",
-      "return $3",
-      "}"
+      "console.log('$1')"
+    ]
+  },
+  "useState": {
+    "prefix": "us",
+    "body": [
+      "const [$1, set${1/(.*)/${1:/capitalize}/}] = useState($2)"
+    ]
+  },
+  "useEffect": {
+    "prefix": "ue",
+    "body": [
+      "useEffect(()=>{",
+      "$1",
+      "},[$2])"
+    ]
+  },
+  "arrow function": {
+    "prefix": "af",
+    "body": [
+      "const $1 = ($2)=>{$3}"
     ]
   },
   "function": {
-    "prefix": "func",
+    "prefix": "fn",
     "body": [
-      "function $1() {",
-      "$2",
-      "return $3",
-      "}"
+      "function $1(){}"
     ]
   },
-  "For Loop": {
+  "create object": {
+    "prefix": "co",
+    "body": [
+      "const $1 = {$2}"
+    ]
+  },
+  "create array": {
+    "prefix": "car",
+    "body": [
+      "const $1 = [$2]"
+    ]
+  },
+  "for loop": {
     "prefix": "for",
     "body": [
-      "for (let ${1:index} = 0; ${1:index} < $2; ${1:index}++) {",
-      "\t${3}",
-      "\t$0",
-      "}"
-    ],
-    "discreption":"custom for"
+      "for (let $1) {$2}"
+    ]
   },
-  "react fragment": {
-    "prefix": "frag",
+  "react functional component": {
+    "prefix": "rfc",
     "body": [
-      "return <>$1</>"
+      "import {} from '.react",
+      "",
+      "const $1 = ($2) => {$3}",
+      "",
+      "export default $1"
     ]
   }
 }
