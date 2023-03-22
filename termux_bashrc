@@ -92,7 +92,7 @@ vitals(){
 # Create node repl with desired functions pre defined
 node(){
     if [ $# -eq 0 ]; then
-        /usr/bin/node ~/.config/dotfiles/noderc.js
+        /usr/bin/node ~/dotfiles/noderc.js
     else
         /usr/bin/node $1
     fi
