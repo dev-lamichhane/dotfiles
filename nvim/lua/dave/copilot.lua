@@ -1,4 +1,4 @@
-vim.cmd([[ imap <silent><script><expr> <C-z> copilot#Accept("\<CR>") ]])
+vim.cmd([[ imap <silent><script><expr> <C-p> copilot#Accept("\<CR>") ]])
 vim.cmd([[ let g:copilot_no_tab_map = v:true ]])
 
 -- change color of copilot suggestion text
