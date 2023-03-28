@@ -56,11 +56,34 @@ alias paste='xclip -o -selection clipboard'
 alias pastep='xclip -o -selection primary'
 alias pastes='xclip -o -selection secondary'
 empty(){
-    if [ $# -eq 0 ]; then
-    xclip -i -selection clipboard /dev/null
-else
-    xclip -i -selection $1 /dev/null
-    fi
+  if [ $# -eq 0 ]; then
+    echo -n "" | xclip -i -selection clipboard
+  elif [ $1 = "c" ]; then
+    echo -n "" | xclip -i -selection clipboard
+  elif [ $1 = "p" ]; then
+    echo -n "" | xclip -i -selection primary
+  elif [ $1 = "s" ]; then
+    echo -n "" | xclip -i -selection secondary
+  elif [ $1 = "a" ]; then
+    echo -n "" | xclip -i -selection clipboard
+    echo -n "" | xclip -i -selection primary
+    echo -n "" | xclip -i -selection secondary
+  fi
+}
+reg(){
+  if [ $# -eq 0 ]; then
+    echo -e "clipboard: $(xclip -o -selection clipboard)"
+    echo -e "primary: $(xclip -o -selection primary)"
+    echo -e "secondary: $(xclip -o -selection secondary)"
+  elif [ $1 = "c" ]; then
+    echo -e "clipboard: $(xclip -o -selection clipboard)"
+  elif [ $1 = "p" ]; then
+    echo -e "primary: $(xclip -o -selection primary)"
+  elif [ $1 = "s" ]; then
+    echo -e "secondary: $(xclip -o -selection secondary)"
+  else
+    echo "invalid argument"
+  fi
 }
 
 # systemctl
@@ -80,7 +103,7 @@ yay(){
   makepkg -si
 }
 
-# git & github clip
+# git & github cli
 alias glog='git log --graph --oneline --all'
 alias difft='git difftool'
 alias gcon='vim ~/.gitconfig'

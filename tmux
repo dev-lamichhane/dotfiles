@@ -12,15 +12,7 @@ set-option -g prefix C-n
 unbind-key C-n
 bind-key C-n send-prefix
 
-# Use Alt-arrow keys to switch panes
-bind -n M-H select-pane -L
-bind -n M-L select-pane -R
-bind -n M-K select-pane -U
-bind -n M-J select-pane -D
-
 # Shift arrow to switch windows
-#bind -n S-Left previous-window
-#bind -n S-Right next-window
 bind -n M-h previous-window
 bind -n M-l next-window
 
