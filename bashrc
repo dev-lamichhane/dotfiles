@@ -86,16 +86,18 @@ reg(){
   fi
 }
 
-# systemctl
+# systemctl & xfce
 alias show='systemctl status'
 alias start='sudo systemctl start'
 alias stop='sudo systemctl stop'
 alias restart='sudo systemctl restart'
+alias suspend='xfce4-session-logout --suspend'
+alias logout='xfce4-session-logout --logout'
+
 
 # pacman & package installation
-alias pacmansyu='sudo pacman -Syu --noconfirm && updatepkglist && paccache -rk1 && reboot'
+alias pacmansyu='sudo pacman -Syu --noconfirm && updatepkglist && paccache -rk1'
 alias updatepkglist='pacman -Qqetn > $HOME/.config/dotfiles/pkglist.txt'
-alias unneeded='sudo pacman -Rns `pacman -Qdtq`'
 yay(){
   cd $HOME/AUR/
   git clone "https://aur.archlinux.org/$1.git"
@@ -196,12 +198,10 @@ alias pip='pip3'
 alias open='xdg-open'
 alias dull='redshift -P -O 4200'
 alias bright='redshift -P -O 6500'
-alias suspend='xfce4-session-logout --suspend'
-alias logout='xfce4-session-logout --logout'
 alias xx='xmodmap $HOME/.Xmodmap'
 
 
-# run ncdu but messy shit
+# run ncdu but skip messy shit
 eyeball(){
   ncdu $1 --exclude node_modules --exclude-caches --exclude-kernfs --no-follow-symlinks
 }
