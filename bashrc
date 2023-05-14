@@ -179,6 +179,27 @@ node(){
         /usr/bin/node $1
     fi
 }
+# redshift for brightness
+alias dull='redshift -P -O 4200'
+alias bright='redshift -P -O 6500'
+
+# Youtube related 
+alias tube='ytfzf -t'
+alias radio='ytfzf -mt'
+download(){
+    if [ $# -eq 1 ]; then
+      yt-dlp $1
+    else
+      yt-dlp --downloader ffmpeg --downloader-args "ffmpeg_i:-ss $2 -to $3" $1
+    fi
+}
+downloadsong(){
+  if [ $# -eq 1 ]; then
+    yt-dlp -f 'ba' -x --audio-format mp3 $1  -o '%(id)s.%(ext)s'
+  else 
+    yt-dlp -f 'ba' -x --audio-format mp3 --downloader ffmpeg --downloader-args "ffmpeg_i:-ss $2 -to $3" -o '%(id)s.%(ext)s' $1 
+  fi
+}
 
 # random
 alias rmd='rm -rf'
@@ -196,8 +217,6 @@ alias battery='sudo tlp-stat | grep Charge | head -1'
 alias py='python'
 alias pip='pip3'
 alias open='xdg-open'
-alias dull='redshift -P -O 4200'
-alias bright='redshift -P -O 6500'
 alias xx='xmodmap $HOME/.Xmodmap'
 
 

@@ -67,6 +67,7 @@ map("i", "<A-p>", "<ESC>:bn<CR>")
 map("i", "<A-p>", "<ESC>:bn<CR>")
 -- NERDTree
 map("n", "<leader>f", ":NERDTreeToggle<CR>")
+map("n", "<leader>d", ":NERDTreeRefreshRoot<CR>")
 -- formatting
 map("n", "<leader>p", ":Prettier<CR>")
 -- clear search
@@ -87,8 +88,11 @@ map("i", "zz", "<ESC>zz") -- center cursor
 map("i", "<C-p>", '<ESC>"+pi<Right>') -- paste from clipboard after the cursor
 map("i", "<C-P>", '<ESC>"+Pi<Right>') -- paste from clipboard before the cursor
 map("i", "<C-r>", "<ESC>:reg<CR>") -- show registry
-map("i", "<leader>f", "<ESC>:NERDTreeToggle<CR>") -- Toggle NERDTree
 map("i", "<leader>p", "<ESC>:Prettier<CR>i") -- formatting
+
+--NERDTree
+map("i", "<leader>f", "<ESC>:NERDTreeToggle<CR>") -- Toggle
+map("i", "<leader>f", "<ESC>:NERDTreeRefreshRoot<CR>") -- Refresh 
 
 -- Navigation
 map("i", "<C-e>", "<ESC>A")

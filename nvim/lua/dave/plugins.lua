@@ -29,7 +29,7 @@ return require('packer').startup(function(use)
     end,
   })
 
-  -- vim surround
+  -- vim surround. Change surrounding tags and stuff
   use 'tpope/vim-surround'
 
   -- git
@@ -56,6 +56,12 @@ return require('packer').startup(function(use)
   -- autopairs
   use 'windwp/nvim-autopairs'
 
+  -- autotag. Close js tags
+  use 'windwp/nvim-ts-autotag'
+
   -- prettier
   use 'prettier/vim-prettier'
+
+  -- highlight hex colors
+  use 'brenoprata10/nvim-highlight-colors'
 end)

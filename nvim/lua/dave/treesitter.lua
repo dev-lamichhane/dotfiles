@@ -36,7 +36,7 @@ configs.setup({
 		max_file_lines = nil, -- Do not enable for files with more than n lines, int
 	},
 	context_commentstring = {
-		enable = false,
+		enable = true,
 		enable_autocmd = false,
 	},
 	autotag = {
