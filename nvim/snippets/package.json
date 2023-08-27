@@ -17,9 +17,14 @@
       {
         "language": [
           "javascript",
-          "javascriptreact"
+          "javascriptreact",
+          "typescript",
+          "typescriptreact"
         ],
         "path": "./javascript.json"
+      },{
+        "language":["json"],
+        "path":"./json.json"
       }
     ]
   }

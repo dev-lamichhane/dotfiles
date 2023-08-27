@@ -137,15 +137,47 @@
   },
   "useState": {
     "prefix": "us",
-    "body": ["const [$1, set$2$1] = useState($3)"]
+    "body": ["const [$1, set$2$1] = useStat$3()"]
   },
   "useEffect": {
     "prefix": "ue",
-    "body": ["useEffect(()=>{", "$1", "},[$2])"]
+    "body": ["useEffec$1(()=>{", "$2", "},[$3])"]
   },
   "arrow function": {
     "prefix": "af",
     "body": ["const $1 = ($2)=>{$3}"]
+  },
+  "async arrow function with try catch": {
+    "prefix": "aaftc",
+    "body": [
+      "const $1 = async ($2) => {",
+      "console.log(`",
+      "Executing: $3",
+      "`)",
+      "try {",
+      "$4",
+      "console.log('Finished Executing: $3')",
+      "}catch(err){",
+      "console.log('Error Origin: $3\\n', err)",
+      "}",
+      "}"
+    ]
+  },
+  "arrow function with try catch": {
+    "prefix": "aftc",
+    "body": [
+      "const $1 = ($2) => {",
+      "console.log(`",
+      "Executing: $3",
+      "`)",
+      "try {",
+      "$4",
+      "console.log('Finished Executing: $3)",
+      "}catch(err){",
+      "console.log('Error Origin: $3\\n', err)",
+      "}",
+      "}"
+    ]
   },
   "function": {
     "prefix": "fn",
@@ -169,10 +201,58 @@
   },
   "react functional component": {
     "prefix": "rfc",
+    "body": ["const $1 = ($2) => {$3}", "", "export default $1"]
+  },
+  "react native functional component": {
+    "prefix": "rnfc",
     "body": [
-      "const $1 = ($2) => {$3}",
+      "import {View, Text} from 'react-native'",
+      "",
+      "const $1:React.FC = ($2) => {$3}",
       "",
       "export default $1"
     ]
+  },
+  "react style": {
+    "prefix": "style",
+    "body": ["style={styles.$1}"]
+  },
+  "try catch": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "$1",
+      "} catch(err){",
+      "console.log('Error Origin: $2', err)",
+      "}"
+    ]
+  },
+  "jsx comment": {
+    "prefix": "//",
+    "body": ["{/* $1 */}"]
+  },
+  "React Native View": {
+    "prefix": "view",
+    "body": ["<View>$1</View>"]
+  },
+  "React Native Text": {
+    "prefix": "text",
+    "body": ["<Text>$1</Text>"]
+  },
+  "React Native View with Style": {
+    "prefix": "views",
+    "body": ["<View style={styles.$1}>$2</View>"]
+  },
+  "React Native Text with Style": {
+    "prefix": "texts",
+    "body": ["<Text style={styles.$1}>$2</Text>"]
+  },
+  "Create a stylesheet Object": {
+    "prefix": "styles",
+    "body": ["const styles = Styleshee$1.create({$2})"]
+  },
+  "console log intention": {
+    "prefix": "clc",
+    "body": ["console.log('Completed #$1')"]
   }
 }

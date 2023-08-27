@@ -1,0 +1,6 @@
+{
+  "add snippet": {
+    "prefix": "snip",
+    "body": ["\"$1\":{", "\"prefix\": \"$2\",", "\"body\":[$3]","},"]
+  }
+}

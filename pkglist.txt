@@ -1,3 +1,4 @@
+aircrack-ng
 archlinux-wallpaper
 base
 base-devel
@@ -30,11 +31,12 @@ nano
 ncdu
 neovim
 network-manager-applet
+openvpn
 pacman-contrib
+penguin-subtitle-player
 perl-image-exiftool
 python-build
 python-installer
-python-wheel
 redshift
 rsync
 rust
@@ -49,8 +51,8 @@ transmission-gtk
 tree
 ttf-sourcecodepro-nerd
 unzip
-usbutils
 wget
+wireshark-qt
 xdotool
 xf86-video-vesa
 xfce4-appfinder

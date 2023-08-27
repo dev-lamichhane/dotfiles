@@ -1,0 +1,22 @@
+{
+  "React Native View": {
+    "prefix": "view",
+    "body": ["<View>$1</View>"]
+  },
+  "React Native Text": {
+    "prefix": "text",
+    "body": ["<Text>$1</Text>"]
+  },
+  "React Native View with Style": {
+    "prefix": "views",
+    "body": ["<View style={styles.$1}>$2</View>"]
+  },
+  "React Native Text with Style": {
+    "prefix": "texts",
+    "body": ["<Text style={styles.$1}>$2</Texts>"]
+  },
+  "Create a stylesheet Object": {
+    "prefix": "styles",
+    "body": ["const styles = Styleshee$1.create({$2})"]
+  }
+}

@@ -13,6 +13,14 @@ export VISUAL='/usr/bin/nvim'
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+#colors
+r=$( tput setaf 160 )
+g=$( tput setaf 34 )
+b=$( tput setaf 21)
+y=$( tput setaf 226 )
+p=$( tput setaf 200 )
+nc=$( tput sgr0)
+
 # android studio bullshit
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -33,20 +41,26 @@ alias rnstart='npx react-native start'
 alias rnandroid='npx react-native run-android'
 alias link='npx react-native link'
 alias rn='npx react-native'
+alias flipper='/home/dave/Downloads/Flipper/flipper'
 
-# navigation
+# navigation & filesystem
 alias bashrc='nvim $HOME/.config/dotfiles/bashrc'
 alias vimrc='cd $HOME/.config/nvim/lua/dave'
 alias tmuxrc='nvim $HOME/.config/dotfiles/tmux'
 alias dotfiles='clear && cd $HOME/.config/dotfiles/ && ls'
 alias snip='nvim $HOME/.config/nvim/snippets/'
-alias dump='cd $HOME/Dump && ls'
 alias docs='cd $HOME/Documents && ls'
 alias down='cd $HOME/Downloads && ls'
 alias aur='cd $HOME/AUR && ls'
 alias dump='cd $HOME/Dump && ls'
 alias jambo='nvim $HOME/Dump/jaambo/Jaambo'
 alias up='cd ..'
+alias rmd='rm -rf'
+create(){
+  mkdir $1
+  cd $1
+  echo "$g You have created folder $r$PWD$g and you are inside it. Have Fun!!$nc"
+}
 
 # xclip
 alias copy='xclip -i -selection clipboard <<<'
@@ -170,7 +184,7 @@ bluemanoff(){
 	sudo systemctl stop bluetooth.service
 }
 
-# node
+# node & npm
 alias tsn='ts-node'
 node(){
     if [ $# -eq 0 ]; then
@@ -179,6 +193,8 @@ node(){
         /usr/bin/node $1
     fi
 }
+alias npmls='npm list -g --depth=0'
+
 # redshift for brightness
 alias dull='redshift -P -O 4200'
 alias bright='redshift -P -O 6500'
@@ -202,7 +218,6 @@ downloadsong(){
 }
 
 # random
-alias rmd='rm -rf'
 alias vim='nvim'
 alias whoami='cowsay You are a hugeee butthole!!'
 alias gui='startxfce4 && exit'
