@@ -38,6 +38,7 @@ perl-image-exiftool
 python-build
 python-installer
 redshift
+ripgrep
 rsync
 rust
 screenfetch

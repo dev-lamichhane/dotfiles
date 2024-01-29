@@ -10,7 +10,8 @@
 # exports
 export EDITOR='/usr/bin/nvim'
 export VISUAL='/usr/bin/nvim'
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/.local/bin
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 #colors
@@ -27,6 +28,7 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:/opt/android-studio/bin/
 
 # java home
 JAVA_HOME=$(dirname $( readlink -f $(which java) ))
@@ -37,11 +39,14 @@ export JAVA_HOME
 PS1='\W$ '
 
 # react native
-alias rnstart='npx react-native start'
+alias rnstart='npx react-native start --reset-cache'
 alias rnandroid='npx react-native run-android'
 alias link='npx react-native link'
 alias rn='npx react-native'
 alias flipper='/home/dave/Downloads/Flipper/flipper'
+
+# launch emulator
+alias emulator='$HOME/Android/Sdk/emulator/emulator -avd Pixel_7_Pro_API_33'
 
 # navigation & filesystem
 alias bashrc='nvim $HOME/.config/dotfiles/bashrc'
@@ -53,7 +58,7 @@ alias docs='cd $HOME/Documents && ls'
 alias down='cd $HOME/Downloads && ls'
 alias aur='cd $HOME/AUR && ls'
 alias dump='cd $HOME/Dump && ls'
-alias jambo='nvim $HOME/Dump/jaambo/Jaambo'
+alias jambo='nvim $HOME/Dump/jaambo/Jaambo-Frontend'
 alias up='cd ..'
 alias rmd='rm -rf'
 create(){
@@ -146,7 +151,7 @@ alias ip='ip -color=auto'
 alias wifishow='nmcli device wifi list'
 alias ipa='ip address'
 alias wifi='nmcli | head -1'
-
+alias vpn="sudo protonvpn"
 connect(){
   # manually connect to a wifi
     if [ $# -eq 1 ]; then
@@ -226,6 +231,7 @@ alias ls='lsd -lh --icon=never'
 alias less='less -r'
 alias colors='for C in {0..255}; do tput setab $C; echo -n "$C "; done; tput sgr0; echo'
 alias grep='grep --color'
+alias rg='rg -i'
 alias ssh='kitty +kitten ssh' #for some reason kitty misbehaves when ssh-ing, the developer provided this shortcut but idk what's going on
 alias screen='screenfetch -p'
 alias battery='sudo tlp-stat | grep Charge | head -1'
