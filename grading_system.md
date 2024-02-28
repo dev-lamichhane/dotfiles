@@ -1,8 +1,32 @@
-# Grading System
+# Grading and Interviewing Guide
 
-## Football Scores Problem
+## Grading System
 
-This is the most basic solution. Anyone who knows how to iterate through an array will do this.This passes 8/13 cases to pass
+### 1. Easy Coding Challenge
+**This challenge should not be used.** 
+
+### 2. Longest Even Length Word
+This is an 'EASY' question, there is no optimization or logic needed for this. If candidates can write basic code, they will be able to pass 12/14 cases. Only failing cases are with sentences that dont have even words.
+
+**This challenge should also not be used.** Maybe we can add two more challenges in place of this and above. 
+
+This passes 12/14 cases.
+
+```javascript
+function longestEvenWord(sentence) {
+  const arr = sentence.split(" ");
+  let longest = "";
+  for (let word of arr) {
+    if (word.length % 2 === 0 && word.length > longest.length) longest = word;
+  }
+  console.log(longest);
+  return longest;
+}
+```
+
+### 3. Football Scores Problem
+This is the easiest of the three difficult challenges. 
+This is the most basic solution. Anyone who knows how to iterate through an array will do this.This passes 8/13 cases to pass. I saw a candidate use two for loops and pass 9/13 challenges.
 
 ```javascript
 function counts(teamA, teamB) {
@@ -35,12 +59,14 @@ function counts(teamA, teamB) {
 
 ### Proposed Grading System for Football Scores Problem
 
-1. Yes: pass 9 or more test cases
+1. Yes: pass 10 or more test cases
 2. Strong Yes: pass 12 or more test cases
 
-## Counting Pairs Problem
+### 4. Counting Pairs Problem
 
-basic solution. I am sure you can do worse than this, but this one passes 8/12
+The wording on this solution is cryptic even for native/fluent speakers of english. I have seen candidates struggle to understand this problem. 
+
+Basic solution. I am sure a worse than this is possible, but this one passes 8/12
 
 ```javascript
 function countPairs(numbers, k) {
@@ -58,7 +84,7 @@ function countPairs(numbers, k) {
 }
 ```
 
-this is all i could think to pass all the cases
+This is all i could think to pass all the cases.
 
 ```javascript
 function countPairs(numbers, k) {
@@ -83,7 +109,7 @@ function countPairs(numbers, k) {
 1. Yes: pass 9 or more cases
 2. Strong Yes: pass 12 or more cases
 
-## Anagram Diff
+### 5. Anagram Diff
 
 I think this is a little tougher than the first 2. Also, this might be more about logic than optimization.
 
@@ -161,24 +187,7 @@ function getMinimumDifference(a, b) {
 1. Yes: pass 10 or more cases
 2. Strongly Yes: pass 13 or 14 test cases
 
-## Longest Even Length Word
+## 2. Explaining Questions to candidates
+I have noticed that when i explain the question to candidates, I am almost solving the problem for them. If Gabe or Scale could clarify how much explanation we can provide the candidates, that would be great. 
 
-This is an 'EASY' question, there is no optimization or logic needed for this. If candidates can write basic code, they will be able to pass 12/14 cases. Only failing cases are with sentences that dont have even words.
-
-This passes 12/14 cases.
-
-```javascript
-function longestEvenWord(sentence) {
-  const arr = sentence.split(" ");
-  let longest = "";
-  for (let word of arr) {
-    if (word.length % 2 === 0 && word.length > longest.length) longest = word;
-  }
-  console.log(longest);
-  return longest;
-}
-```
-
-### Proposed Grading System for Longest Even Length Word
-
-1. Lets get rid of this question and find another
+For example, is it okay to explain what an acceptable pair is in the counting pairs problem or to explain what is being asked from the football scores problem ? Because we do that, we significantly help the candidates especially if their english comprehension isn't very strong.
