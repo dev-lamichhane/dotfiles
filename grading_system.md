@@ -191,3 +191,12 @@ function getMinimumDifference(a, b) {
 I have noticed that when i explain the question to candidates, I am almost solving the problem for them. If Gabe or Scale could clarify how much explanation we can provide the candidates, that would be great. 
 
 For example, is it okay to explain what an acceptable pair is in the counting pairs problem or to explain what is being asked from the football scores problem ? Because we do that, we significantly help the candidates especially if their english comprehension isn't very strong.
+
+## 3. Communications
+Being able to articulate your process, logic, ideas etc. is a part of being a good programmer. While we cant expect everyone to be fluent in English or very articulate, we should definitely be a little more stringent while judging a candidate's communication skills. I think a good rule of thumb would be: if you think you can work with the candidate in a professional setting, you should pass him. This is definitely not a hard and fast rule but lose guidelines. It's up to your discretion.  
+
+## 4. Alternative Questions
+If you have suspicion that a candidate had access to the questions/solutions before the test or cheating in some manner, please have them solve alternative problems from leetcode. Asking the candidate to solve the same problem in a different language (if the candidate claims to know other languages) could also be way to a way to go. We will provide links to alternative questions on the canvas section of interview team group on slack. Some tell-tale signs of candidates having access to problems/solutions before the test:
+1. Solving problem without having to think / taking very little time
+2. Writing code without making any mistakes / not having to think about it.
+3. Running the tests before running the code to see if it works.
