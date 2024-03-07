@@ -192,6 +192,8 @@ I have noticed that when i explain the question to candidates, I am almost solvi
 
 This mostly applies to the counting pairs problem: if we explain to them how (1,1), (1,2) and (2,2) are the only possible pairs from the array [1,1,1,2], they wont have to do any thinking. Since they have 30 minutes and the actual coding time is less than 5 minutes once they understand the problem, I think we should not explain it all the way. Again, use your judgement on this one. If a good coder is stuck on this problem, it might be a good idea to nudge them in the right direction by explaining the problem a little more, but let's not break down the problem right off the bat. 
 
+Also, I think it'd be a good idea to give the candidates either Counting Pairs or Anagram Diff problem. If you think a candidate is a good coder and is stuck in one of these problems, it might be a good diea to offer them the Football Scores Problem around the 15 minute mark which is plenty of time for them to solve that problem. 
+
 ## 3. Alternative Questions
 If you have suspicion that a candidate had access to the questions/solutions before the test or cheating in some manner, please have them solve alternative problems from leetcode. Asking the candidate to solve the same problem in a different language (if the candidate claims to know other languages) could also be way to a way to go. We will provide links to alternative questions on the canvas section of interview team group on slack. Some tell-tale signs of candidates having access to problems/solutions before the test:
 1. Solving problem without having to think / taking very little time
@@ -199,6 +201,6 @@ If you have suspicion that a candidate had access to the questions/solutions bef
 3. Running the tests before running the code to see if it works.
 
 ## 4. Identity
-We are seeing more and more people applying for this job multiple times and with fake/partial names. In the next lot of emails to be sent, we've added language that they will be required to login with github and that might deter some, but for now I am proposing the following:
+We are seeing more and more people applying for this job multiple times and with fake/partial names. One lady interviewed had a single name Anu in the sheet, but it turned out her real name was something completely different from Anu. In the next lot of emails to be sent, we've added language that they will be required to login with github and that might deter some, but for now I am proposing the following:
 1. Ask the candidate to state their FULL LEGAL NAME once we start recording
 2. If the name is different from the one in the sheet, update the name and mention in the note that you've updated their name
