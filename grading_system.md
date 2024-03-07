@@ -25,7 +25,7 @@ function longestEvenWord(sentence) {
 ```
 
 ### 3. Football Scores Problem
-This is the easiest of the three difficult challenges. 
+This is the easiest of the three difficult challenges.
 This is the most basic solution. Anyone who knows how to iterate through an array will do this.This passes 8/13 cases to pass. I saw a candidate use two for loops and pass 9/13 challenges.
 
 ```javascript
@@ -188,15 +188,17 @@ function getMinimumDifference(a, b) {
 2. Strongly Yes: pass 13 or 14 test cases
 
 ## 2. Explaining Questions to candidates
-I have noticed that when i explain the question to candidates, I am almost solving the problem for them. If Gabe or Scale could clarify how much explanation we can provide the candidates, that would be great. 
+I have noticed that when i explain the question to candidates, I am almost solving the problem for them. I haven't gotten a clear answer from Gabe on this one so we will have to use our discretion on this one. 
 
-For example, is it okay to explain what an acceptable pair is in the counting pairs problem or to explain what is being asked from the football scores problem ? Because we do that, we significantly help the candidates especially if their english comprehension isn't very strong.
+This mostly applies to the counting pairs problem: if we explain to them how (1,1), (1,2) and (2,2) are the only possible pairs from the array [1,1,1,2], they wont have to do any thinking. Since they have 30 minutes and the actual coding time is less than 5 minutes once they understand the problem, I think we should not explain it all the way. Again, use your judgement on this one. If a good coder is stuck on this problem, it might be a good idea to nudge them in the right direction by explaining the problem a little more, but let's not break down the problem right off the bat. 
 
-## 3. Communications
-Being able to articulate your process, logic, ideas etc. is a part of being a good programmer. While we cant expect everyone to be fluent in English or above-average articulate, we should definitely be a little more stringent while judging a candidate's communication skills. I think a good rule of thumb would be: if you think you can work with the candidate in a professional setting, you should pass them. This is definitely not a hard and fast rule but lose guidelines. It's up to your discretion.  
-
-## 4. Alternative Questions
+## 3. Alternative Questions
 If you have suspicion that a candidate had access to the questions/solutions before the test or cheating in some manner, please have them solve alternative problems from leetcode. Asking the candidate to solve the same problem in a different language (if the candidate claims to know other languages) could also be way to a way to go. We will provide links to alternative questions on the canvas section of interview team group on slack. Some tell-tale signs of candidates having access to problems/solutions before the test:
 1. Solving problem without having to think / taking very little time
 2. Writing code without making any mistakes / not having to think about it.
 3. Running the tests before running the code to see if it works.
+
+## 4. Identity
+We are seeing more and more people applying for this job multiple times and with fake/partial names. In the next lot of emails to be sent, we've added language that they will be required to login with github and that might deter some, but for now I am proposing the following:
+1. Ask the candidate to state their FULL LEGAL NAME once we start recording
+2. If the name is different from the one in the sheet, update the name and mention in the note that you've updated their name
