@@ -4,15 +4,19 @@
 # source a secret bashrc file if present
 [[ -f $HOME/.info ]] && source $HOME/.info
 
-# source a temp bashrc file if present
-[[ -f $HOME/.config/dotfiles/temp.bashrc ]] && source $HOME/.config/dotfiles/temp.bashrc
-
 # exports
 export EDITOR='/usr/bin/nvim'
 export VISUAL='/usr/bin/nvim'
-export PATH=$PATH:$HOME/bin
-export PATH=$PATH:$HOME/.local/bin
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export PATH="$HOME/bin:$PATH"
+
+ #java home
+JAVA_HOME=$(dirname $( readlink -f $(which java) ))
+JAVA_HOME=$(realpath "$JAVA_HOME"/../)
+export JAVA_HOME
+
+# prompt
+PS1='\W$ '
 
 #colors
 r=$( tput setaf 160 )
@@ -21,22 +25,6 @@ b=$( tput setaf 21)
 y=$( tput setaf 226 )
 p=$( tput setaf 200 )
 nc=$( tput sgr0)
-
-# android studio bullshit
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:/opt/android-studio/bin/
-
-# java home
-JAVA_HOME=$(dirname $( readlink -f $(which java) ))
-JAVA_HOME=$(realpath "$JAVA_HOME"/../)
-export JAVA_HOME
-
-# prompt
-PS1='\W$ '
 
 # react native
 alias rnstart='npx react-native start --reset-cache'
@@ -151,7 +139,12 @@ alias ip='ip -color=auto'
 alias wifishow='nmcli device wifi list'
 alias ipa='ip address'
 alias wifi='nmcli | head -1'
-alias vpn="sudo protonvpn"
+vpn(){
+  #connect to vpn 
+  #first argument = country name as in us or jp or nl
+  #second argument = server number as in 12 or 343
+  sudo openvpn --config /etc/openvpn/client/node-$1-$2.protonvpn.net.udp.ovpn --auth-user-pass /etc/openvpn/client/auth.txt
+}
 connect(){
   # manually connect to a wifi
     if [ $# -eq 1 ]; then
@@ -189,16 +182,8 @@ bluemanoff(){
 	sudo systemctl stop bluetooth.service
 }
 
+
 # node & npm
-alias tsn='ts-node'
-node(){
-    if [ $# -eq 0 ]; then
-        /usr/bin/node $HOME/.config/dotfiles/noderc.js
-    else
-        /usr/bin/node $1
-    fi
-}
-alias npmls='npm list -g --depth=0'
 
 # redshift for brightness
 alias dull='redshift -P -O 4200'
@@ -258,3 +243,7 @@ calc(){
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
 
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
