@@ -133,7 +133,7 @@
   },
   "console.log": {
     "prefix": "cl",
-    "body": ["console.log('$1')"]
+    "body": ["console.log($1)"]
   },
   "useState": {
     "prefix": "us",
@@ -254,5 +254,13 @@
   "console log intention": {
     "prefix": "clc",
     "body": ["console.log('Completed #$1')"]
+  },
+  "require statement": {
+    "prefix": "req",
+    "body": ["const $1 = require('node:$2')"]
+  },
+  "require statement for promise API": {
+    "prefix": "reqpro",
+    "body": ["const $1 = require('node:$2/promises')"]
   }
 }

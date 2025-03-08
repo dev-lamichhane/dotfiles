@@ -7,6 +7,10 @@
 
 # need bin/battery_status for statusline to display proper stats
 
+# colors
+set -g default-terminal "tmux-256color"
+set-option -ga terminal-overrides ",xterm-256color:Tc"
+
 # Send prefix
 set-option -g prefix C-n
 unbind-key C-n
@@ -28,9 +32,6 @@ bind c new-window -c"#{pane_current_path}"
 
 # Easy config reload
 bind-key r source-file ~/.tmux.conf \; display-message "tmux config reloaded!"
-
-# Trying to tmux to render 256 colors
-set -g default-terminal "screen-256color"
 
 # Styles
 set-option -g status-style bg="#292c3b"
