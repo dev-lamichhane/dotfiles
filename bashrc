@@ -1,15 +1,18 @@
 # ~/.bashrc - Clean and Optimized
 
+# Source .info so extract file locations
+source ~/.info
+
 # Ensure this file is only executed in interactive shells
 [[ $- != *i* ]] && return
 
 # ====== Environment Variables ======
-export EDITOR='/usr/bin/nvim'  # Set Neovim as the default editor
+export EDITOR='/usr/bin/nvim' # Set Neovim as the default editor
 export VISUAL='/usr/bin/nvim'
-export PATH="$HOME/bin:$PATH"  # Add custom scripts to PATH
+export PATH="$HOME/bin:$PATH" # Add custom scripts to PATH
 
 # ====== Prompt Configuration ======
-PS1='\W$ '  # Show only the current directory in the prompt
+PS1='\W$ ' # Show only the current directory in the prompt
 
 # ====== Terminal and Clipboard ======
 alias copy='xclip -selection clipboard'
@@ -42,7 +45,7 @@ alias ghowmany='git log --oneline | wc -l'
 alias attach='tmux attach -t'
 alias tls='tmux list-sessions'
 alias tkill='tmux kill-session -t'
-alias tmux='tmux -2'  # Force 256-color support in tmux
+alias tmux='tmux -2' # Force 256-color support in tmux
 
 # ====== Network and IP Management ======
 alias showdns='cat /etc/resolv.conf'
@@ -50,30 +53,30 @@ alias ip='ip -color=auto'
 alias wifishow='nmcli device wifi list'
 alias ipa='ip address'
 
-dnschange(){
-    echo 'nameserver 1.1.1.1' | sudo tee /etc/resolv.conf
+dnschange() {
+  echo 'nameserver 1.1.1.1' | sudo tee /etc/resolv.conf
 }
 
-disable6(){
-    sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
-    sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+disable6() {
+  sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+  sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
 }
 
-enable6(){
-    sudo sysctl -w net.ipv6.conf.all.disable_ipv6=0
-    sudo sysctl -w net.ipv6.conf.default.disable_ipv6=0
+enable6() {
+  sudo sysctl -w net.ipv6.conf.all.disable_ipv6=0
+  sudo sysctl -w net.ipv6.conf.default.disable_ipv6=0
 }
 
 # ====== Bluetooth Management ======
-bluemanon(){
-    sudo systemctl start bluetooth.service
-    sudo bluetooth on
-    blueman-manager
+bluemanon() {
+  sudo systemctl start bluetooth.service
+  sudo bluetooth on
+  blueman-manager
 }
 
-bluemanoff(){
-    sudo bluetooth off
-    sudo systemctl stop bluetooth.service
+bluemanoff() {
+  sudo bluetooth off
+  sudo systemctl stop bluetooth.service
 }
 
 # ====== Display and Brightness ======
@@ -93,12 +96,13 @@ alias colors='for C in {0..255}; do tput setab $C; echo -n "$C "; done; tput sgr
 
 # ====== Miscellaneous ======
 alias open='xdg-open'
-alias xx='xmodmap $HOME/.Xmodmap'  # Apply custom Xmodmap keybindings
+alias xx='xmodmap $HOME/.Xmodmap' # Apply custom Xmodmap keybindings
 alias gui='startxfce4 && exit'
 alias vim='nvim'
 alias whoami='cowsay You are a hugeee butthole!!'
 alias dc='droidcam'
 alias sourcebash='source ~/.bashrc'
+alias bashrc='nvim ~/.config/dotfiles/bashrc'
 
 # ====== Fuzzy Finder (fzf) Integration ======
 eval "$(fzf --bash)"
